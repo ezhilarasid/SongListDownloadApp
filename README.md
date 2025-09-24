@@ -1,78 +1,118 @@
-🎵 React Native Song List & Download App
+<h1 align="center">🎵 Song List & Download App</h1>
 
-A mini React Native project that displays a list of songs from an API and allows users to download songs from both the Song List screen and the Song Details screen.
+<p align="center">
+  <b>A React Native mini-project</b><br/>
+  Display a list of songs from an API and download them directly from the app.
+</p>
 
-✨ Features
+---
 
-🏠 Home Screen with gradient background & headphones illustration
+## ✨ Features
 
-📜 Song List screen with:
+- 🏠 **Home Screen** with gradient background & headphones illustration  
+- 📜 **Song List Screen**  
+  - Fetches songs from mock API  
+  - Shows song thumbnail, title, artist  
+  - Download button per item  
+- 🎶 **Song Details Screen**  
+  - Large artwork and metadata  
+  - Download button with loader  
+- ⬇️ **Downloads** stored in app’s `DocumentDirectoryPath` via `react-native-fs`  
+- 🔄 Loader + ✅ success alerts  
+- 🧭 **Navigation** with React Navigation (Stack)  
+- 🛠️ **State Management** with Redux Toolkit (RTK)  
+- ♻️ Clean architecture & reusable components  
 
-Song thumbnail, title, artist
+------
 
-Download button for each song
-
-🎶 Song Details screen with:
-
-Larger artwork
-
-Song info
-
-Download button
-
-⬇️ File Download using react-native-fs (saves inside app’s Documents folder)
-
-🔄 Loader spinner while downloading
-
-✅ Success alert after download completes
-
-♻️ Clean project structure with reusable components
-
-📂 Project Structure
+## 📂 Project Structure
+```bash
 src/
  ├── api/
- │   └── songsApi.js         # Mock API for song data
+ │   └── songsApi.js
  ├── components/
- │   └── SongItem.js         # Reusable song card with download button
+ │   └── SongItem.js
  ├── navigation/
- │   └── AppNavigator.js     # Navigation setup
+ │   └── AppNavigator.js
  ├── screens/
- │   ├── HomeScreen.js       # Welcome / landing page
- │   ├── SongListScreen.js   # Displays list of songs
- │   └── SongDetailsScreen.js# Song detail view with download
+ │   ├── HomeScreen.js
+ │   ├── SongListScreen.js
+ │   └── SongDetailsScreen.js
  └── utils/
-     └── downloadHelper.js   # File download logic
+     └── downloadHelper.js
+```
+---
 
-🚀 Getting Started
-1. Clone the repo
+## 📥 Clone Repository
+```bash
 git clone https://github.com/ezhilarasid/SongListDownloadApp.git
 cd SongListDownloadApp
+```
+------
 
-2. Install dependencies
+## 📦 Install Dependencies
+```bash
 npm install
+```
+------
 
-3. Install navigation dependencies
+
+## 🔧 Install Required Packages
+```bash
 npm install @react-navigation/native @react-navigation/stack
 npm install react-native-screens react-native-safe-area-context react-native-gesture-handler
-
-4. Install file system dependency
 npm install react-native-fs
+npm install @reduxjs/toolkit react-redux
+```
+------
 
-5. iOS setup (Mac only)
+## 🍏 iOS Setup (Mac only)
+```bash
 cd ios && pod install && cd ..
+```
+------
 
-▶️ Running the App
-
-Start Metro bundler:
-
-npx react-native start
-
-
-Run on Android:
-
+## ▶️ Run the App
+📡 Start Metro Bundler
+```bash
 npx react-native run-android
+```
+------
 
+## 🤖 Run on Android
+```bash
+npx react-native start
+```
+------
 
-Run on iOS (macOS only):
-
+## 🍏 Run on iOS
+```bash
 npx react-native run-ios
+```
+------
+
+## 🛠️ Tech Stack
+
+⚛️ React Native CLI
+🟣 Redux Toolkit (RTK)
+🧭 React Navigation (Stack)
+📂 react-native-fs (file handling)
+
+------
+
+## 👩‍💻 Author
+
+Ezhilarasi Durai
+------
+
+## 📸 Screenshots
+
+<p align="center">
+  <img src="docs/screenshots/home.png" width="250" alt="Home Screen"/>
+  <img src="docs/screenshots/songlist.png" width="250" alt="Song List"/>
+  <img src="docs/screenshots/songdetails.png" width="250" alt="Song Details"/>
+</p>
+
+
+
+
