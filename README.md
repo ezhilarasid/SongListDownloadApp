@@ -108,9 +108,9 @@ Ezhilarasi Durai
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="docs/screenshots/home.png" width="250" alt="Home Screen"/>
-  <img src="docs/screenshots/songlist.png" width="250" alt="Song List"/>
-  <img src="docs/screenshots/songdetails.png" width="250" alt="Song Details"/>
+  <img src="src/docs/screenshots/home.png" width="250" alt="Home Screen"/>
+  <img src="src/docs/screenshots/songlist.png" width="250" alt="Song List"/>
+  <img src="src/docs/screenshots/songdetails.png" width="250" alt="Song Details"/>
 </p>
 
 
