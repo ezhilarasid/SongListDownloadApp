@@ -10,34 +10,25 @@ import {
 import { fetchSongs } from "../api/songsApi";
 import SongItem from "../components/SongItem";
 import { downloadSong } from "../utils/downloadHelper";
+import { useSelector, useDispatch } from "react-redux";
+import { loadSongs, downloadSongThunk } from "../store/slice/songsSlice";
 
 const SongListScreen = ({ navigation }) => {
-    const [songs, setSongs] = useState([]);
-    const [loading, setLoading] = useState(true);
+
+    const dispatch = useDispatch();
+      
+    const { list: songs, loading, downloadingId } = useSelector((state) => state.songs);
 
     useEffect(() => {
-        loadSongs();
-    }, []);
-
-    const loadSongs = async () => {
-        const data = await fetchSongs();
-        setSongs(data);
-        setLoading(false);
-    };
-
-    const [downloading, setDownloading] = useState(false);
-    const [downloadingId, setDownloadingId] = useState(null);
+        dispatch(loadSongs());
+    }, [dispatch]);
 
     const handleDownload = async (item) => {
-        try {
-            setDownloadingId(item.id); 
-            const path = await downloadSong(item);
-            Alert.alert("✅ Download Complete", `${item.title} saved to:\n${path}`);
-        } catch (err) {
-            console.error("Download failed", err);
-            Alert.alert("❌ Download Failed", "Something went wrong while downloading.");
-        } finally {
-            setDownloadingId(null); 
+        const resultAction = await dispatch(downloadSongThunk(item));
+        if (downloadSongThunk.fulfilled.match(resultAction)) {
+        Alert.alert("✅ Download Complete", `${item.title} saved successfully!`);
+        } else {
+        Alert.alert("❌ Download Failed", "Something went wrong while downloading.");
         }
     };
 
